@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal TIC | IES Villa de Mijas</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans (Títulos) + Inter (Cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#005A9C',
+                            600: '#00487c',
+                            700: '#1E3A8A',
+                            900: '#0f172a',
+                        },
+                        mint: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#10B981',
+                            600: '#0D9488',
+                            700: '#0f766e',
+                        },
+                        editorial: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Patrón de puntos sutil para el fondo hero */
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        /* Efecto de elevación suave y sombra coloreada */
+        .portal-card {
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .portal-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- SECCIÓN HERO / ENCABEZADO PREMIUM -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-brand-700 to-brand-500 text-white pb-28 sm:pb-36 pt-8 sm:pt-12">
+        <!-- Patrón decorativo y destellos ambientales -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-70 pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-mint-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 -left-24 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Barra superior institucional -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-8 border-b border-white/15">
+                <div class="flex items-center gap-3.5">
+                    <!-- Emblema SVG Institucional -->
+                    <div class="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center shadow-lg">
+                        <svg class="w-7 h-7 text-mint-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block font-display font-extrabold text-xl sm:text-2xl tracking-tight text-white">
+                            IES VILLA DE MIJAS
+                        </span>
+                        <span class="block text-xs sm:text-sm text-blue-200 font-medium">
+                            Consejería de Desarrollo Educativo y F.P.
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Badge de estado / acceso rápido -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-blue-50">
+                    <span class="w-2 h-2 rounded-full bg-mint-500 animate-pulse"></span>
+                    <span>Ecosistema Digital del Centro</span>
+                </div>
+            </div>
+
+            <!-- Título Principal del Portal -->
+            <div class="text-center max-w-3xl mx-auto mt-10 sm:mt-14">
+                <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+                    Portal de Gestión y Aplicaciones Centradas en el Aula
+                </h1>
+                <p class="text-base sm:text-lg text-blue-100/90 leading-relaxed max-w-2xl mx-auto">
+                    Accede de forma rápida y centralizada a las herramientas digitales para la organización de espacios, control de aula y comunicación del instituto.
+                </p>
+
+                <!-- Aviso Corporativo @g.educaand.es en estilo píldora Glassmorphism -->
+                <div class="mt-7 inline-flex flex-col sm:flex-row items-center gap-2.5 px-5 py-3 rounded-2xl bg-slate-900/40 backdrop-blur-md border border-white/20 text-xs sm:text-sm text-blue-100 shadow-xl">
+                    <div class="flex items-center gap-2 font-semibold text-amber-300">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                        <span>Autenticación requerida:</span>
+                    </div>
+                    <span>Utiliza tu cuenta corporativa <strong class="text-white font-semibold underline decoration-mint-500 decoration-2 underline-offset-2">@g.educaand.es</strong> si el sistema lo solicita.</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL (TARJETAS FLOTANTES SUPERPUESTAS AL HERO) -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-24 pb-16 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+            <!-- TARJETA 1: SISTEMA DE RESERVAS E INCIDENCIAS -->
+            <article class="portal-card bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-brand-500/15 flex flex-col justify-between relative overflow-hidden group">
+                <!-- Franja superior de color -->
+                <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-500 to-blue-400"></div>
+                
+                <div>
+                    <!-- Icono y Etiqueta -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform duration-300">
+                            <!-- Icono SVG Calendario / Herramienta -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M14.5 14.5l2 2m0-2l-2 2"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-brand-50 text-brand-600 border border-brand-100">
+                            Espacios y TIC
+                        </span>
+                    </div>
+
+                    <!-- Título y Descripción -->
+                    <h2 class="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-500 transition-colors">
+                        Sistema de Reservas e Incidencias
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
+                        Gestión y reserva de espacios (aulas específicas, carritos de portátiles, proyectores) y comunicación de incidencias TIC o de mantenimiento en el centro.
+                    </p>
+                </div>
+
+                <!-- Botón de Acción -->
+                <div class="pt-5 border-t border-slate-100">
+                    <a href="https://script.google.com/a/macros/g.educaand.es/s/AKfycbwET6qhU6kOc8inL3RWbXA5IUxOsLlUs4_eBbf_K0_W-cbxCsINdJUmvLdxf82K9bEDOw/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center w-full px-5 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-500 to-brand-700 hover:from-brand-600 hover:to-slate-900 rounded-2xl shadow-md shadow-brand-500/25 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2">
+                        <span>Acceder al Sistema</span>
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- TARJETA 2: CONTROL DE ACCESO AL BAÑO (DESHABILITADA TEMPORALMENTE POR MANTENIMIENTO)
+            <article class="portal-card bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-mint-600/15 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-mint-600 to-mint-500"></div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-mint-500 to-mint-700 flex items-center justify-center text-white shadow-lg shadow-mint-600/30 group-hover:scale-105 transition-transform duration-300">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-mint-50 text-mint-700 border border-mint-100">
+                            Gestión de Aula
+                        </span>
+                    </div>
+
+                    <h2 class="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-mint-600 transition-colors">
+                        Control de Acceso al Baño
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
+                        Registro digital y control en tiempo real del flujo de salida del alumnado al servicio desde las aulas para garantizar un correcto seguimiento y convivencia.
+                    </p>
+                </div>
+
+                <div class="pt-5 border-t border-slate-100">
+                    <a href="https://script.google.com/a/macros/g.educaand.es/s/AKfycbze0Sxp2LBBsemszAvG_HfM768W-7cXLxYZIGgRLNL_oD9AQdlZ4LUykkM4Hi6oRbr5/exec" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center w-full px-5 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-mint-600 to-mint-700 hover:from-mint-700 hover:to-emerald-900 rounded-2xl shadow-md shadow-mint-600/25 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-mint-500 focus:ring-offset-2">
+                        <span>Registrar / Controlar Acceso</span>
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+            <!-- TARJETA 2: CONTROL DE ACCESO AL BAÑO (PRÓXIMAMENTE / DESHABILITADO) -->
+            <article aria-disabled="true" class="bg-white/95 rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xl shadow-slate-900/5 flex flex-col justify-between relative overflow-hidden select-none">
+                <!-- Franja superior de color atenuada -->
+                <div class="absolute top-0 inset-x-0 h-1.5 bg-slate-300"></div>
+
+                <!-- Cartel / Banner flotante de Próximamente -->
+                <div class="absolute inset-0 z-10 bg-slate-50/45 backdrop-blur-[1.5px] flex items-center justify-center p-6 pointer-events-auto cursor-not-allowed">
+                    <div class="px-5 py-2.5 rounded-2xl bg-slate-900/90 text-white font-display font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl border border-white/15 flex items-center gap-2.5 -rotate-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                        <span>Próximamente</span>
+                    </div>
+                </div>
+
+                <div class="opacity-55 pointer-events-none">
+                    <!-- Icono y Etiqueta -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-200 flex items-center justify-center text-slate-500">
+                            <!-- Icono SVG Reloj / Check de paso -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-slate-100 text-slate-500 border border-slate-200">
+                            Gestión de Aula
+                        </span>
+                    </div>
+
+                    <!-- Título y Descripción -->
+                    <h2 class="font-display text-xl sm:text-2xl font-bold text-slate-700 mb-3">
+                        Control de Acceso al Baño
+                    </h2>
+                    <p class="text-slate-500 text-sm sm:text-base leading-relaxed mb-8">
+                        Registro digital y control en tiempo real del flujo de salida del alumnado al servicio desde las aulas para garantizar un correcto seguimiento y convivencia.
+                    </p>
+                </div>
+
+                <!-- Botón Deshabilitado -->
+                <div class="pt-5 border-t border-slate-100 opacity-55 pointer-events-none">
+                    <span class="inline-flex items-center justify-center w-full px-5 py-3.5 text-sm font-semibold text-slate-500 bg-slate-200 rounded-2xl">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                        <span>No disponible temporalmente</span>
+                    </span>
+                </div>
+            </article>
+
+            <!-- TARJETA 3: DIFUSIÓN WEB Y REDES SOCIALES -->
+            <article class="portal-card bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-editorial-600/15 flex flex-col justify-between relative overflow-hidden group md:col-span-2 lg:col-span-1">
+                <!-- Franja superior de color -->
+                <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-editorial-600 to-purple-500"></div>
+
+                <div>
+                    <!-- Icono y Etiqueta -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-editorial-500 to-editorial-700 flex items-center justify-center text-white shadow-lg shadow-editorial-600/30 group-hover:scale-105 transition-transform duration-300">
+                            <!-- Icono SVG Megáfono / Difusión -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+                            </svg>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-editorial-50 text-editorial-700 border border-editorial-100">
+                            Comunicación
+                        </span>
+                    </div>
+
+                    <!-- Título y Descripción -->
+                    <h2 class="font-display text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-editorial-600 transition-colors">
+                        Difusión Web y Redes
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
+                        Envía directamente por correo electrónico las reseñas, actividades complementarias y fotografías para su publicación en la web oficial y redes del instituto.
+                    </p>
+                </div>
+
+                <!-- Botón de Acción Mailto -->
+                <div class="pt-5 border-t border-slate-100">
+                    <a href="mailto:flopdel364@g.educaand.es?subject=%5BWEB%5D%20Noticia%20para%20la%20web%20del%20centro&body=Hola%2C%0A%0AAqu%C3%AD%20tienes%20los%20datos%20para%20publicar%20en%20la%20web%20y%20redes%20sociales%20del%20IES%20Villa%20de%20Mijas%3A%0A%0A-%20T%C3%ADtulo%20sugerido%3A%20%0A-%20Fecha%20y%20lugar%20de%20la%20actividad%3A%20%0A-%20Cursos%20o%20departamentos%20participantes%3A%20%0A-%20Resumen%20de%20lo%20ocurrido%3A%20%0A%0A(No%20olvides%20adjuntar%20las%20fotos%20de%20la%20actividad%20a%20este%20correo%20antes%20de%20enviarlo)." 
+                       class="inline-flex items-center justify-center w-full px-5 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-editorial-600 to-editorial-700 hover:from-editorial-700 hover:to-indigo-950 rounded-2xl shadow-md shadow-editorial-600/25 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-editorial-500 focus:ring-offset-2">
+                        <span>Enviar Noticia / Fotos</span>
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA INSTITUCIONAL -->
+    <footer class="w-full bg-white border-t border-slate-200/80 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500">
+                <div class="flex items-center gap-2 text-center md:text-left">
+                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                    <span>&copy; <span id="current-year"></span> <strong class="text-slate-700 font-semibold">IES Villa de Mijas</strong>. Todos los derechos reservados.</span>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+                    <a href="https://educacionadistancia.juntadeandalucia.es/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors font-medium">
+                        Plataforma EducAand
+                    </a>
+                    <span class="text-slate-300">•</span>
+                    <a href="https://www.juntadeandalucia.es/educacion/portales/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors font-medium">
+                        Junta de Andalucía
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
